@@ -19,7 +19,10 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={150}>
-          <div className="mt-12 h-px bg-border" />
+          <div className="mt-12 flex items-center gap-4">
+            <div className="h-px w-12 bg-accent" />
+            <div className="h-px flex-1 bg-border" />
+          </div>
         </ScrollReveal>
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
@@ -52,9 +55,12 @@ export function Hero() {
           <div className="mt-16 flex flex-wrap gap-x-8 gap-y-4">
             <a
               href="#work"
-              className="text-sm text-text-primary underline decoration-accent underline-offset-4"
+              className="inline-flex items-center gap-2 text-sm text-text-primary underline decoration-accent underline-offset-4"
             >
               See my work
+              <svg className="h-3.5 w-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
             </a>
             <a
               href="mailto:mati@kerplunk.studio"

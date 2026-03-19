@@ -5,7 +5,6 @@ import { useState } from 'react'
 const navLinks = [
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
-  { href: '#stack', label: 'Stack' },
 ] as const
 
 export function Header() {
