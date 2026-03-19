@@ -5,13 +5,9 @@ import { TimelineItem } from './TimelineItem'
 export function Experience() {
   return (
     <Section id="experience" title="Experience">
-      <div className="max-w-4xl">
+      <div className="space-y-0">
         {experience.map((exp, index) => (
-          <TimelineItem
-            key={exp.id}
-            experience={exp}
-            isLast={index === experience.length - 1}
-          />
+          <TimelineItem key={exp.id} experience={exp} index={index} />
         ))}
       </div>
     </Section>

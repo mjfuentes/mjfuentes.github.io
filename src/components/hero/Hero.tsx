@@ -1,90 +1,77 @@
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+
 export function Hero() {
   return (
-    <section id="hero" className="relative flex min-h-screen items-center pt-16">
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 lg:px-8">
-        {/* Location Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent-primary/20 bg-accent-primary/5 px-4 py-2">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-accent-primary" />
-          <span className="font-mono text-xs uppercase tracking-wider text-accent-primary">
+    <section className="flex min-h-screen flex-col justify-center pt-16">
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 lg:px-8">
+        <ScrollReveal>
+          <p className="mb-12 text-sm tracking-wide text-text-muted">
             Patagonia, Argentina
-          </span>
-        </div>
+          </p>
+        </ScrollReveal>
 
-        {/* Main Content - Asymmetric Layout */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          {/* Left Column - Name and Title */}
-          <div className="lg:col-span-7">
-            <h1 className="font-display text-6xl font-bold leading-none tracking-tighter text-text-primary sm:text-7xl md:text-8xl lg:text-9xl">
-              Matias
-              <br />
-              <span className="text-accent-primary">Fuentes</span>
-            </h1>
+        <ScrollReveal delay={100}>
+          <h1 className="text-hero font-display italic tracking-tight text-text-primary">
+            Matias
+            <br />
+            Fuentes
+          </h1>
+        </ScrollReveal>
 
-            <p className="mt-8 font-display text-2xl font-medium leading-tight text-accent-primary md:text-3xl lg:text-4xl">
-              Software Engineer &<br />
-              Creative Technologist
+        <ScrollReveal delay={150}>
+          <div className="mt-12 h-px bg-border" />
+        </ScrollReveal>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <ScrollReveal delay={200} className="lg:col-span-5">
+            <p className="text-xl leading-relaxed text-text-secondary lg:text-2xl">
+              Software engineer & founder building at the intersection of AI
+              and craft.
             </p>
+          </ScrollReveal>
 
-            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-text-secondary md:text-xl">
-              13+ years building software at the intersection of technology and creativity.
-              Founder of <span className="text-text-primary">Kerplunk Studio</span>.
-              Currently exploring agentic AI architectures and the new possibilities they create.
-            </p>
-
-            <div className="mt-12 flex flex-wrap gap-4">
+          <ScrollReveal delay={300} className="lg:col-span-4 lg:col-start-8">
+            <p className="text-base leading-relaxed text-text-muted">
+              13+ years shipping software across startups and established
+              companies in Buenos Aires, Berlin, and Patagonia. Currently
+              making tools at{' '}
               <a
-                href="mailto:mati@kerplunk.studio"
-                className="inline-flex items-center gap-2 border border-accent-primary bg-accent-primary px-6 py-3 font-body text-sm font-medium text-background transition-all hover:bg-accent-primary/90"
-              >
-                Get in touch
-              </a>
-              <a
-                href="https://github.com/mjfuentes"
+                href="https://kerplunk.studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-border bg-transparent px-6 py-3 font-body text-sm font-medium text-text-primary transition-all hover:border-text-primary"
+                className="text-text-primary underline decoration-border underline-offset-4 transition-colors duration-200 hover:decoration-accent"
               >
-                View GitHub
+                Kerplunk
               </a>
-            </div>
-          </div>
-
-          {/* Right Column - Avatar */}
-          <div className="flex items-center justify-center lg:col-span-5">
-            <div className="relative">
-              {/* Avatar Circle */}
-              <div className="flex h-48 w-48 items-center justify-center rounded-full border-4 border-accent-primary bg-surface lg:h-64 lg:w-64">
-                <span className="font-display text-6xl font-bold text-accent-primary lg:text-7xl">
-                  MF
-                </span>
-              </div>
-
-              {/* Decorative Element */}
-              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-accent-secondary/20 blur-3xl" />
-              <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-accent-primary/20 blur-3xl" />
-            </div>
-          </div>
+              .
+            </p>
+          </ScrollReveal>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
-          <span className="font-mono text-xs uppercase tracking-wider text-text-secondary">
-            Scroll
-          </span>
-          <svg
-            className="h-6 w-6 animate-bounce text-accent-primary"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
+        <ScrollReveal delay={400}>
+          <div className="mt-16 flex flex-wrap gap-x-8 gap-y-4">
+            <a
+              href="#work"
+              className="text-sm text-text-primary underline decoration-accent underline-offset-4"
+            >
+              See my work
+            </a>
+            <a
+              href="mailto:mati@kerplunk.studio"
+              className="text-sm text-text-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
+            >
+              mati@kerplunk.studio
+            </a>
+            <a
+              href="https://github.com/mjfuentes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-text-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
+            >
+              GitHub
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

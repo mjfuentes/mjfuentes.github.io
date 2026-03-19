@@ -2,76 +2,81 @@
 
 import { useState } from 'react'
 
+const navLinks = [
+  { href: '#work', label: 'Work' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#stack', label: 'Stack' },
+] as const
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navLinks = [
-    { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#tech', label: 'Tech Stack' },
-  ]
-
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <div className="flex items-center gap-2">
-          <a href="#hero" className="font-display text-xl font-bold text-accent-primary">
-            MF
-          </a>
-        </div>
+    <header className="fixed top-0 z-50 w-full border-b border-border bg-background">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
+        <a
+          href="#"
+          className="font-display text-xl italic text-text-primary"
+        >
+          MF
+        </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex md:gap-8">
+        <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-body text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+              className="text-sm text-text-secondary transition-colors duration-200 hover:text-text-primary"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="mailto:mati@kerplunk.studio"
+            className="border border-text-primary px-4 py-1.5 text-sm text-text-primary transition-colors duration-200 hover:bg-text-primary hover:text-background"
+          >
+            Contact
+          </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden"
           aria-label="Toggle menu"
         >
-          <div className="flex h-6 w-6 flex-col justify-center gap-1">
+          <div className="flex h-6 w-6 flex-col justify-center gap-1.5">
             <span
-              className={`h-0.5 w-full bg-text-primary transition-transform ${
-                isMenuOpen ? 'translate-y-1.5 rotate-45' : ''
+              className={`h-px w-full bg-text-primary transition-transform duration-300 ${
+                isMenuOpen ? 'translate-y-[3.5px] rotate-45' : ''
               }`}
             />
             <span
-              className={`h-0.5 w-full bg-text-primary transition-opacity ${
-                isMenuOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-text-primary transition-transform ${
-                isMenuOpen ? '-translate-y-1.5 -rotate-45' : ''
+              className={`h-px w-full bg-text-primary transition-transform duration-300 ${
+                isMenuOpen ? '-translate-y-[3.5px] -rotate-45' : ''
               }`}
             />
           </div>
         </button>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute left-0 right-0 top-full border-b border-border/50 bg-background/95 backdrop-blur-md md:hidden">
+          <div className="absolute left-0 right-0 top-full border-b border-border bg-background md:hidden">
             <div className="flex flex-col gap-4 px-6 py-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="font-body text-lg font-medium text-text-secondary transition-colors hover:text-text-primary"
+                  className="text-lg text-text-secondary transition-colors hover:text-text-primary"
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="mailto:mati@kerplunk.studio"
+                className="text-lg text-text-secondary transition-colors hover:text-text-primary"
+              >
+                Contact
+              </a>
             </div>
           </div>
         )}

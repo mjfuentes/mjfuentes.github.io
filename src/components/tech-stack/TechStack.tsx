@@ -1,37 +1,33 @@
 import { skills } from '@/data/skills'
 import { Section } from '@/components/layout/Section'
-import { SkillTag } from './SkillTag'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+
+const categories = [
+  { key: 'languages', label: 'Languages' },
+  { key: 'frameworks', label: 'Frameworks' },
+  { key: 'tools', label: 'Tools' },
+  { key: 'platforms', label: 'Platforms' },
+] as const
 
 export function TechStack() {
-  const categories = {
-    languages: skills.filter((s) => s.category === 'languages'),
-    frameworks: skills.filter((s) => s.category === 'frameworks'),
-    tools: skills.filter((s) => s.category === 'tools'),
-    platforms: skills.filter((s) => s.category === 'platforms'),
-  }
-
-  const categoryLabels = {
-    languages: 'Languages',
-    frameworks: 'Frameworks',
-    tools: 'Tools',
-    platforms: 'Platforms',
-  }
-
   return (
-    <Section id="tech" title="Tech Stack">
-      <div className="space-y-12">
-        {Object.entries(categories).map(([category, categorySkills]) => (
-          <div key={category}>
-            <h3 className="mb-6 font-display text-xl font-bold text-accent-primary">
-              {categoryLabels[category as keyof typeof categoryLabels]}
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {categorySkills.map((skill) => (
-                <SkillTag key={skill.name} skill={skill} />
-              ))}
-            </div>
-          </div>
-        ))}
+    <Section id="stack" title="Stack">
+      <div className="space-y-0">
+        {categories.map(({ key, label }, index) => {
+          const categorySkills = skills.filter((s) => s.category === key)
+          return (
+            <ScrollReveal key={key} delay={index * 80}>
+              <div className="grid grid-cols-1 gap-2 border-t border-border py-6 lg:grid-cols-12">
+                <p className="text-sm text-text-muted lg:col-span-3">
+                  {label}
+                </p>
+                <p className="text-base text-text-primary lg:col-span-8 lg:col-start-5">
+                  {categorySkills.map((s) => s.name).join(', ')}
+                </p>
+              </div>
+            </ScrollReveal>
+          )
+        })}
       </div>
     </Section>
   )

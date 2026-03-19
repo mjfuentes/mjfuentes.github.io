@@ -4,10 +4,10 @@ import { ProjectCard } from './ProjectCard'
 
 export function Projects() {
   return (
-    <Section id="projects" title="Selected Projects">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+    <Section id="work" title="Selected Work">
+      <div className="space-y-0">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
     </Section>

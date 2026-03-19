@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0a;
-  --color-surface: #141414;
-  --color-border: #262626;
-  --color-accent-primary: #f59e0b;
-  --color-accent-secondary: #8b5cf6;
-  --color-text-primary: #fafafa;
-  --color-text-secondary: #a3a3a3;
+  --color-background: #f6f1eb;
+  --color-surface: #ede7df;
+  --color-border: #d4cdc4;
+  --color-accent: #c2410c;
+  --color-accent-hover: #9a3412;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #57534e;
+  --color-text-muted: #a8a29e;
 
-  --font-display: var(--font-space-grotesk), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-display: var(--font-instrument-serif), serif;
+  --font-body: var(--font-dm-sans), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
@@ -24,4 +25,37 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* Hero typography */
+.text-hero {
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: 0.85;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
