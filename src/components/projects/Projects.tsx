@@ -30,6 +30,29 @@ export function Projects() {
             <p className="mt-8 text-sm text-text-muted">
               {featured.techStack.join(' · ')}
             </p>
+            {featured.githubUrl && (
+              <a
+                href={featured.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm text-text-primary underline decoration-border underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+              >
+                View on GitHub
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                  />
+                </svg>
+              </a>
+            )}
           </article>
         </ScrollReveal>
 

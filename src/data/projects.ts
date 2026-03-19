@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: 'cc+',
     description: 'Desktop application for Claude Code featuring multi-tab sessions, agent observability, and integrated browser functionality.',
     techStack: ['TypeScript', 'React', 'Electron'],
-    githubUrl: 'https://github.com/mjfuentes/ccplus',
+    githubUrl: 'https://github.com/kerplunkstudio/ccplus',
     category: 'tools',
   },
   {
