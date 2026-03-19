@@ -10,7 +10,15 @@ export function Footer() {
               Matias Fuentes
             </p>
             <p className="mt-1 font-body text-sm text-text-secondary">
-              © {currentYear} Built with Next.js
+              © {currentYear} Built with{' '}
+              <a
+                href="https://ccplus.run"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-primary transition-colors hover:text-text-primary"
+              >
+                cc+
+              </a>
             </p>
           </div>
 
