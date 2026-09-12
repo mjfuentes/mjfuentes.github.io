@@ -31,7 +31,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="mailto:mati@kerplunk.studio"
+            href="mailto:matiasj.fuentes@gmail.com"
             className="border border-text-primary px-4 py-1.5 text-sm text-text-primary transition-colors duration-200 hover:bg-text-primary hover:text-background"
           >
             Contact
@@ -71,7 +71,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="mailto:mati@kerplunk.studio"
+                href="mailto:matiasj.fuentes@gmail.com"
                 className="text-lg text-text-secondary transition-colors hover:text-text-primary"
               >
                 Contact

@@ -10,10 +10,10 @@ export function Footer() {
               Let&apos;s build something.
             </p>
             <a
-              href="mailto:mati@kerplunk.studio"
+              href="mailto:matiasj.fuentes@gmail.com"
               className="mt-4 inline-block text-lg text-text-secondary underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
             >
-              mati@kerplunk.studio
+              matiasj.fuentes@gmail.com
             </a>
           </div>
 
@@ -27,12 +27,12 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href="https://kerplunk.studio"
+              href="https://linkedin.com/in/matiasjfuentes"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-text-secondary transition-colors duration-200 hover:text-text-primary"
             >
-              Kerplunk
+              LinkedIn
             </a>
           </div>
         </div>
