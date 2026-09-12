@@ -10,6 +10,13 @@ export const projects: Project[] = [
     category: 'tools',
   },
   {
+    id: 'fotoescurra',
+    title: 'FotoEscurra & FotoBayo',
+    description: 'Multi-tenant photography sales platform built solo, running two commercial businesses on one codebase. Both in production, processing thousands of pictures a day. Face search on AWS Rekognition so buyers find their own photos from an event, four payment providers across two currencies, and electronic invoicing integrated with the Argentine tax authority.',
+    techStack: ['TypeScript', 'Node.js', 'PostgreSQL', 'AWS Rekognition', 'ECS Fargate', 'AWS CDK'],
+    category: 'web',
+  },
+  {
     id: 'amiga',
     title: 'AMIGA',
     description: 'Autonomous Modular Interactive Graphical Agent — an AI agent system for autonomous task execution with visual interface.',
