@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: 'ccplus',
     title: 'cc+',
-    description: 'Desktop application for Claude Code featuring multi-tab sessions, agent observability, and integrated browser functionality.',
+    description: 'Open source orchestration and observability platform for AI coding agents. Runs parallel Claude Code sessions in isolated git worktrees under a supervisor that assigns work, watches it and retries. Per-session token and cost tracking, Electron desktop app for macOS and Linux.',
     techStack: ['TypeScript', 'React', 'Electron'],
     githubUrl: 'https://github.com/kerplunkstudio/ccplus',
     category: 'tools',

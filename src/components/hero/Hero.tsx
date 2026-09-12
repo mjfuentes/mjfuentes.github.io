@@ -6,7 +6,7 @@ export function Hero() {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 lg:px-8">
         <ScrollReveal>
           <p className="mb-12 text-sm tracking-wide text-text-muted">
-            Patagonia, Argentina
+            Patagonia, Argentina &middot; moving to Barcelona
           </p>
         </ScrollReveal>
 
@@ -28,25 +28,17 @@ export function Hero() {
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
           <ScrollReveal delay={200} className="lg:col-span-5">
             <p className="text-xl leading-relaxed text-text-secondary lg:text-2xl">
-              Software engineer & founder building at the intersection of AI
-              and craft.
+              Staff backend &amp; platform engineer. Distributed systems,
+              search, payments.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={300} className="lg:col-span-4 lg:col-start-8">
             <p className="text-base leading-relaxed text-text-muted">
-              13+ years shipping software across startups and established
-              companies in Buenos Aires, Berlin, and Patagonia. Currently
-              making tools at{' '}
-              <a
-                href="https://kerplunk.studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-primary underline decoration-border underline-offset-4 transition-colors duration-200 hover:decoration-accent"
-              >
-                Kerplunk
-              </a>
-              .
+              14 years building and leading backend systems, most of it in
+              Berlin: Engineering Manager at Delivery Hero, Staff Engineer at
+              Gorillas, Head of Backend at Atem, Senior Engineer at Staffbase.
+              Now building AI-native tooling independently.
             </p>
           </ScrollReveal>
         </div>
@@ -63,10 +55,10 @@ export function Hero() {
               </svg>
             </a>
             <a
-              href="mailto:mati@kerplunk.studio"
+              href="mailto:matiasj.fuentes@gmail.com"
               className="text-sm text-text-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
             >
-              mati@kerplunk.studio
+              matiasj.fuentes@gmail.com
             </a>
             <a
               href="https://github.com/mjfuentes"
@@ -75,6 +67,14 @@ export function Hero() {
               className="text-sm text-text-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
             >
               GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/matiasjfuentes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-text-muted underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
+            >
+              LinkedIn
             </a>
           </div>
         </ScrollReveal>
