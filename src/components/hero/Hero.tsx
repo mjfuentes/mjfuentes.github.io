@@ -28,8 +28,8 @@ export function Hero() {
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
           <ScrollReveal delay={200} className="lg:col-span-5">
             <p className="text-xl leading-relaxed text-text-secondary lg:text-2xl">
-              Staff backend &amp; platform engineer. Distributed systems,
-              search, payments.
+              Staff backend engineer. Distributed systems, search,
+              payments.
             </p>
           </ScrollReveal>
 
