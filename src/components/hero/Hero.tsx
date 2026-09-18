@@ -6,7 +6,7 @@ export function Hero() {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 lg:px-8">
         <ScrollReveal>
           <p className="mb-12 text-sm tracking-wide text-text-muted">
-            Patagonia, Argentina &middot; moving to Barcelona
+            Patagonia, Argentina
           </p>
         </ScrollReveal>
 
