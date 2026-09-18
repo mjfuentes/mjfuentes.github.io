@@ -49,12 +49,4 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/mjfuentes/ChessBud',
     category: 'tools',
   },
-  {
-    id: 'dropsy',
-    title: 'DROPSY',
-    description: 'Educational robot programming system. Block-based Android client for programming a robot, built in 2016.',
-    techStack: ['Java', 'Android', 'Blockly'],
-    githubUrl: 'https://github.com/mjfuentes/dropsy-android-client',
-    category: 'mobile',
-  },
 ] as const
