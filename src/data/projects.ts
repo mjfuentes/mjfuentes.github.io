@@ -19,8 +19,8 @@ export const projects: Project[] = [
   {
     id: 'amiga',
     title: 'AMIGA',
-    description: 'Autonomous Modular Interactive Graphical Agent — an AI agent system for autonomous task execution with visual interface.',
-    techStack: ['Python', 'AI Agents', 'Computer Vision', 'LLM'],
+    description: 'The Python predecessor of cc+. 16 agents, model routing by cost, worktree isolation, an agent that rewrites its own prompts from its error log. Archived March 2026.',
+    techStack: ['Python', 'Claude Agent SDK', 'Flask', 'React'],
     githubUrl: 'https://github.com/mjfuentes/amiga',
     category: 'ai',
   },
