@@ -24,3 +24,8 @@ export interface Skill {
   name: string
   category: 'languages' | 'frameworks' | 'tools' | 'platforms'
 }
+
+export interface Stat {
+  value: string
+  label: string
+}

@@ -7,32 +7,45 @@ interface TimelineItemProps {
 }
 
 export function TimelineItem({ experience, index }: TimelineItemProps) {
-  return (
-    <ScrollReveal delay={index * 100}>
-      <div className="border-t border-border py-10">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-3">
-            <p className="text-sm text-text-muted">{experience.period}</p>
-            <p className="mt-1 text-sm text-text-muted">
-              {experience.location}
-            </p>
-          </div>
+  const isBreak = experience.id === 'career-break'
 
-          <div className="lg:col-span-8 lg:col-start-5">
-            <h3 className="font-display text-2xl italic text-text-primary">
+  return (
+    <ScrollReveal delay={Math.min(index, 4) * 60}>
+      <div className="group grid grid-cols-1 gap-2 border-b border-border py-6 md:grid-cols-12 md:gap-6">
+        <p className="text-[0.9375rem] tabular-nums text-text-secondary md:col-span-2">
+          {experience.period}
+        </p>
+
+        <div className="md:col-span-4">
+          <h3
+            className={`text-heading text-2xl leading-none transition-colors duration-200 group-hover:text-accent ${
+              isBreak ? 'text-text-secondary' : ''
+            }`}
+          >
+            {experience.company}
+          </h3>
+          {!isBreak && (
+            <p className="mt-1 text-[0.9375rem]">
               {experience.role}
-            </h3>
-            <p className="mt-1 text-base text-accent">
-              {experience.company}
+              <span className="text-text-secondary"> · {experience.location}</span>
             </p>
-            <p className="mt-4 text-base leading-relaxed text-text-secondary">
-              {experience.description}
-            </p>
-            <p className="mt-4 text-sm text-text-muted">
-              {experience.techStack.join(' · ')}
-            </p>
-          </div>
+          )}
         </div>
+
+        {(experience.description || experience.techStack.length > 0) && (
+          <div className="grid gap-3 md:col-span-6">
+            {experience.description && (
+              <p className="text-[0.9375rem] leading-relaxed text-text-secondary">
+                {experience.description}
+              </p>
+            )}
+            {experience.techStack.length > 0 && (
+              <p className="text-label text-text-secondary">
+                {experience.techStack.join(' · ')}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </ScrollReveal>
   )

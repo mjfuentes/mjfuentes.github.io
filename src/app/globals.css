@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f6f1eb;
-  --color-surface: #ede7df;
-  --color-border: #d4cdc4;
-  --color-accent: #c2410c;
-  --color-accent-hover: #9a3412;
-  --color-text-primary: #1c1917;
-  --color-text-secondary: #57534e;
-  --color-text-muted: #a8a29e;
+  --color-background: #ebeee9;
+  --color-border: rgba(13, 21, 16, 0.22);
+  --color-rule: #0d1510;
+  --color-accent: #0f5b3d;
+  --color-accent-hover: #0a4630;
+  --color-on-accent: #f2f5ef;
+  --color-text-primary: #0d1510;
+  --color-text-secondary: #4c5a51;
 
-  --font-display: var(--font-instrument-serif), serif;
-  --font-body: var(--font-dm-sans), sans-serif;
-  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -29,13 +28,69 @@ body {
 
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-background);
+  color: var(--color-on-accent);
 }
 
-/* Hero typography */
-.text-hero {
-  font-size: clamp(4rem, 10vw, 10rem);
-  line-height: 0.85;
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@layer components {
+  /* Display type: Archivo on its width axis */
+  .text-name {
+    font-weight: 900;
+    font-stretch: 68%;
+    text-transform: uppercase;
+    font-size: clamp(3.5rem, 15.5vw, 13.25rem);
+    line-height: 0.82;
+    letter-spacing: -0.02em;
+  }
+
+  .text-lede {
+    font-weight: 700;
+    font-stretch: 85%;
+    font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .text-feature {
+    font-weight: 900;
+    font-stretch: 70%;
+    font-size: clamp(4rem, 10vw, 8.75rem);
+    line-height: 0.85;
+  }
+
+  .text-stat {
+    font-weight: 800;
+    font-stretch: 75%;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-heading {
+    font-weight: 800;
+    font-stretch: 80%;
+    line-height: 1;
+  }
+
+  .text-closer {
+    font-weight: 900;
+    font-stretch: 70%;
+    text-transform: uppercase;
+    font-size: clamp(2.25rem, 6vw, 5rem);
+    line-height: 0.9;
+  }
+
+  .text-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
 }
 
 /* Scroll reveal */
@@ -53,6 +108,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;

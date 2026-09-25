@@ -1,56 +1,40 @@
+import { contact } from '@/data/contact'
+
+const linkClass =
+  'font-semibold underline decoration-accent decoration-2 underline-offset-4 transition-colors duration-200 hover:text-accent'
+
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="font-display text-3xl italic text-text-primary">
-              Let&apos;s build something.
-            </p>
-            <a
-              href="mailto:matiasj.fuentes@gmail.com"
-              className="mt-4 inline-block text-lg text-text-secondary underline decoration-border underline-offset-4 transition-colors duration-200 hover:text-text-primary hover:decoration-accent"
-            >
-              matiasj.fuentes@gmail.com
-            </a>
-          </div>
+    <footer className="mx-auto max-w-7xl px-5 pb-10 pt-8 lg:px-12">
+      <div className="grid grid-cols-1 items-end gap-8 border-t-2 border-rule pt-6 lg:grid-cols-12">
+        <p className="text-closer lg:col-span-8">Let&apos;s build something.</p>
 
-          <div className="flex gap-8 lg:col-span-4 lg:col-start-9 lg:justify-end">
-            <a
-              href="https://github.com/mjfuentes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-text-secondary transition-colors duration-200 hover:text-text-primary"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/matiasjfuentes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-text-secondary transition-colors duration-200 hover:text-text-primary"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-16 border-t border-border pt-8">
-          <p className="text-xs text-text-muted">
-            &copy; {currentYear} Matias Fuentes. Built with{' '}
-            <a
-              href="https://ccplus.run"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-text-secondary transition-colors duration-200 hover:text-text-primary"
-            >
-              cc+
-            </a>
-          </p>
+        <div className="grid gap-2 text-sm lg:col-span-3 lg:col-start-10">
+          <a href={`mailto:${contact.email}`} className={linkClass}>
+            {contact.email}
+          </a>
+          <a href={contact.github} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            GitHub
+          </a>
+          <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            LinkedIn
+          </a>
         </div>
       </div>
+
+      <p className="mt-12 text-xs text-text-secondary">
+        &copy; {currentYear} Matias Fuentes. Built with{' '}
+        <a
+          href="https://ccplus.run"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-text-primary transition-colors duration-200 hover:text-accent"
+        >
+          cc+
+        </a>
+      </p>
     </footer>
   )
 }
